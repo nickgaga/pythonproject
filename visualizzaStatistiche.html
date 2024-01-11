@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizza Statistiche</title>
+</head>
+<body>
+    <h1>Statistiche</h1>
+
+    <!-- Includi l'immagine del grafico dei primi più scelti -->
+    <h2>Primi più scelti:</h2>
+    <img src="{{ url_for('static', filename=primi_grafico) }}" alt="Primi più scelti" width="500" height="500">
+
+    <!-- Includi l'immagine del grafico dei secondi più scelti -->
+    <h2>Secondi più scelti:</h2>
+    <img src="{{ url_for('static', filename=secondi_grafico) }}" alt="Secondi più scelti" width="500" height="500">
+    <h2>Incasso totale:</h2>
+    <p>{{ incasso_totale }} Euro</p>
+</body>
+</html>

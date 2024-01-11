@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestore Ordini</title>
+</head>
+<body>
+    <h1>Lista Ordini</h1>
+    <ul>
+        {% for order in myresult %}
+        <li>
+            <strong>Ordine ID: {{ order[0] }}</strong><br>
+            Primo: {{ order[1] }}<br>
+            Secondo: {{ order[2] }}<br>
+            Contorno: {{ order[3] }}<br>
+            Dolce: {{ order[4] }}<br>
+            Totale: {{ order[5] }}<br>
+            <!-- Aggiungi qui gli altri dettagli dell'ordine che desideri visualizzare -->
+
+            <!-- Bottone Accetta -->
+            <form action="/accetta_ordine" method="post" style="display: inline;">
+                <input type="hidden" name="order_id" value="{{ order[0] }}">
+                <button type="submit">Accetta</button>
+            </form>
+
+            <!-- Bottone Rifiuta -->
+            <form action="/rifiuta_ordine" method="post" style="display: inline;">
+                <input type="hidden" name="order_id" value="{{ order[0] }}">
+                <button type="submit">Rifiuta</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+<!-- Pulsante Refresh -->
+     <!-- Bottone per visualizzare le statistiche -->
+    <!-- Bottone per visualizzare le statistiche -->
+<a href="{{ url_for('visualizza_dati') }}">Visualizza statistiche</a>
+
+
+
+</body>
+</html>

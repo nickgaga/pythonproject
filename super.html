@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supermarket</title>
+    <!-- Aggiungi qui il link al CSS di Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Benvenuto nel Supermercato Online</h2>
+        <h4>Seleziona i tuoi prodotti</h4>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="product_banco">Prodotti da Banco:</label>
+                <select class="form-control" id="product_banco" name="product_banco">
+                    <option value="">Seleziona un prodotto</option>
+                    {% for product in products %}
+                        <option value="{{ product }}">{{ product }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="product_freschi">Prodotti Freschi:</label>
+                <select class="form-control" id="product_freschi" name="product_freschi">
+                    <option value="">Seleziona un prodotto</option>
+                    {% for product in products %}
+                        <option value="{{ product }}">{{ product }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="product_frigo">Prodotti da Frigo:</label>
+                <select class="form-control" id="product_frigo" name="product_frigo">
+                    <option value="">Seleziona un prodotto</option>
+                    {% for product in products %}
+                        <option value="{{ product }}">{{ product }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="elettrodomestici">Elettrodomestici:</label>
+                <select class="form-control" id="elettrodomestici" name="elettrodomestici">
+                    <option value="">Seleziona un prodotto</option>
+                    {% for product in products %}
+                        <option value="{{ product }}">{{ product }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Invia Ordine</button>
+        </form>
+
+        {% if last_order %}
+        <div class="mt-5">
+            <h4>Ultimo Ordine Effettuato</h4>
+            <p><strong>Data Ordine:</strong> {{ last_order[3] }}</p>
+            <p><strong>Prodotti da Banco:</strong> {{ last_order[4] }}</p>
+            <p><strong>Prodotti Freschi:</strong> {{ last_order[5] }}</p>
+            <p><strong>Prodotti da Frigo:</strong> {{ last_order[6] }}</p>
+            <p><strong>Elettrodomestici:</strong> {{ last_order[7] }}</p>
+            <p><strong>Prezzo Totale:</strong> {{ last_order[8] }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Aggiungi qui i link ai file JavaScript di Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

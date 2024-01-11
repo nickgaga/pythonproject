@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Ristorante</title>
+    <!-- Collega Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="my-4">Seleziona il menu del ristorante:</h2>
+        <form action="/stamp" method="post">
+            <div class="mb-3">
+                <label for="primi" class="form-label">Primi:</label>
+                <select name="primi" id="primi" class="form-select">
+                    <option value="pasta">Pasta</option>
+                    <option value="risotto">Risotto</option>
+                    <option value="gnocchi">Gnocchi</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="secondi" class="form-label">Secondi:</label>
+                <select name="secondi" id="secondi" class="form-select">
+                    <option value="pollo">Pollo</option>
+                    <option value="pesce">Pesce</option>
+                    <option value="manzo">Manzo</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="contorni" class="form-label">Contorni:</label>
+                <select name="contorni" id="contorni" class="form-select">
+                    <option value="insalata">Insalata</option>
+                    <option value="verdure">Verdure</option>
+                    <option value="patate">Patate</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="dolci" class="form-label">Dolci:</label>
+                <select name="dolci" id="dolci" class="form-select">
+                    <option value="tiramisu">Tiramisù</option>
+                    <option value="pannacotta">Pannacotta</option>
+                    <option value="torta">Torta</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Invia</button>
+        </form>
+
+        <!-- Pulsante per il gestore -->
+        <a href="/gestore" class="btn btn-secondary mt-3">Pannello Gestore</a>
+    </div>
+    <!-- Collega lo script di Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

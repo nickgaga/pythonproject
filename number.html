@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Numeri Pari</title>
+</head>
+<body>
+    <h1>Numeri Pari</h1>
+    <table>
+        <tr>
+            <th>Numero</th>
+        </tr>
+        {% for number in numbers %}
+            {% if number % 2 == 0 %}
+                <ul>
+                    <li>{{ number }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </table>
+</body>
+</html>
